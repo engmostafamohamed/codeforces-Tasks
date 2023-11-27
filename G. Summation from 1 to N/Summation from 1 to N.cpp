@@ -1,73 +1,71 @@
-// Given a number N
-// . Print the summation of the numbers that is between 1 and N
-//  (inclusive).
+// Given 2 numbers A
+//  and B
+// . Print floor, ceil and round of A/B
 
-// .∑i=1Ni
+// Note:
+
+// Floor: Is a mathematical function that takes a real number X
+//  and its output is the greatest integer less than or equal to X
+// .
+// Ceil: Is a mathematical function that takes a real number X
+//  and its output is the smallest integer larger than or equal to X
+// .
+// Round: Is a mathematical function that takes a real number X
+//  and its output is the closest integer to that number X
+// .
+
+// For more clarification visit the links in the notes below.
 
 // Input
-// Only one line containing a number N
-//  (1≤N≤109)
+// Only one line containing two numbers A and B (1≤A,B≤103)
 // Output
-// Print the summation of the numbers that are between 1 and N
-//  (inclusive).
+// Print 3 lines that contain the following in the same order:
 
+// "floor A / B = Floor result" without quotes.
+// "ceil A / B = Ceil result" without quotes.
+// "round A / B = Round result" without quotes.
 // Examples
+
 // input
-// 3
+// 10 3
 // output
-// 6
+// floor 10 / 3 = 3
+// ceil 10 / 3 = 4
+// round 10 / 3 = 3
+
 // input
-// 10
+// 10 4
 // output
-// 55
+// floor 10 / 4 = 2
+// ceil 10 / 4 = 3
+// round 10 / 4 = 3
+
+// input
+// 10 6
+// output
+// floor 10 / 6 = 1
+// ceil 10 / 6 = 2
+// round 10 / 6 = 2
 // Note
-// First Example :
+// Links:
 
-// the numbers between 1 and 3 are 1,2,3 .
-
-// So the answer is: (1 + 2 + 3 = 6)
-
-// Second Example :
-
-// the numbers between 1 and 10 are 1,2,3,4,5,6,7,8,9,10.
-
-// So the answer is: (1 + 2 + 3 + 4 + 5 + 6 +7 +8 + 9 + 10 = 55)
+// For Rounding method visit: https://www.mathsisfun.com/numbers/rounding-methods.html.
+// For Flooring and Ceiling method visit: https://www.mathsisfun.com/sets/function-floor-ceiling.html.
 
 
 // the answer
 
 #include<iostream>
-#include<iomanip>
+#include <cmath>
 using namespace std;
-
-// int main()
-// {
-//     long long Number, result = 0;
-//     cin >> Number;
-//     for (int i = 1; i <= Number; i++)
-//     {
-//         result += i;
-//     }
-//     cout << result << endl;
-//     return 0;
-// }
-
-
-
-/////////////////////////////////
-// another answer to save more memory during processing the program 
 int main()
 {
-    long long Number, result = 0;
-    cin >> Number;
-    if (Number %2 ==0)
-    {
-        result=(Number+1) *(Number /2);
-    }else
-    {
-        result= Number *(int(Number /2)+1);
-    }
-    cout << result << endl;
+    long long A,B;
+    cin >> A >> B;
+    double result = static_cast<double>(A) / B;
+    cout <<"floor "<< A <<" / "<< B<<" = "<< floor(result)<< endl;
+    cout <<"ceil "<< A <<" / "<< B<<" = "<< ceil(result)<< endl;
+    cout <<"round "<< A <<" / "<< B<<" = "<< round(result)<< endl;
     return 0;
 }
 
